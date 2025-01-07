@@ -1,0 +1,23 @@
+ //Inventory item stock conversion
+ describe("Should create item stock conversion ",()=>{
+    beforeEach(() =>{
+    //login before each test
+    cy.login("01234444553","123456");
+    });
+
+    it("should create a stock conversion using stock transfer feature of old item " , ()=>{
+        cy.stockTransferNewItem("Testing for Stock Transfer using old items","1","DD");
+        //cy.approveStockConversion();
+    });
+
+    // it ("Should perform full sales return action",()=>{
+    //     cy.salesReturnFull();
+    //     cy.approveSalesReturn();
+    
+    // });
+
+
+  
+    
+    
+ });
