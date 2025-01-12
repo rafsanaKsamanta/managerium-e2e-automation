@@ -2,12 +2,12 @@
  describe("Should create item stock conversion ",()=>{
     beforeEach(() =>{
     //login before each test
-    cy.login("01234444553","123456");
+    cy.login("01679172828","123456");
     });
 
     it("should create a stock conversion using stock transfer feature of old item " , ()=>{
         cy.stockTransferNewItem("Testing for Stock Transfer using old items","1","DD");
-        //cy.approveStockConversion();
+        cy.approveStockConversion();
     });
 
     // it ("Should perform full sales return action",()=>{

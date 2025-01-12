@@ -2,7 +2,7 @@
  describe("Should create item stock conversion ",()=>{
     beforeEach(() =>{
     //login before each test
-    cy.login("01679172828","mgm@admin123");
+    cy.login("01679172828","123456");
     });
 
     it("should create a stock conversion using stock transfer feature of old item " , ()=>{
