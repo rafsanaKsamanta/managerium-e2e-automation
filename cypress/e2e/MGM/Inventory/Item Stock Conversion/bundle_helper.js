@@ -15,7 +15,7 @@
     //click on Item stock conversion button
     
     //cy.wait(2000);
-    cy.get(".btn").eq(2).click({force:true});
+    cy.get(".btn").eq(3).click({force:true});
     cy.wait(1000);
 
     //select conversion type
@@ -79,7 +79,7 @@
     });
     cy.visit("https://mgm.ibos.io/commonapproval");
     cy.wait(1000);
-    cy.get('.rowItem').eq(24).click({force:true});
+    cy.get('.rowItem').eq(27).click({force:true});
     cy.wait(2000);
     
     for (let i = 1; i <= 1; i++){

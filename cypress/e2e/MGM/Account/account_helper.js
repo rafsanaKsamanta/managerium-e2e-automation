@@ -94,8 +94,11 @@
       });
       cy.visit("https://mgm.ibos.io/accounts/expenseOrAdvance");
       cy.wait(1000);
+      //go to advance tab
+      cy.get('.MuiButtonBase-root ').eq(3).click({force:true});
+      cy.wait(1000);
       //click on $ icon for payment
-      cy.get('.MuiSvgIcon-root').eq(32).click({force:true});
+      cy.get('.MuiSvgIcon-root').eq(38).click({force:true});
       cy.wait(1000);
       cy.get('.MuiSvgIcon-root').eq(29).click({force:true});
       cy.wait(1000);
