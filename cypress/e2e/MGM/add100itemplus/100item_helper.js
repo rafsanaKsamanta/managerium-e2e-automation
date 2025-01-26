@@ -32,8 +32,8 @@ export const createPurchaseOrderWith100Item = (quantity,rate) => {
           .click({ force: true })
           .get(selector)
           .type("{enter}", { force: true });
-        cy.get(".form-control").eq(5).click({force:true}).type(quantity);
-        cy.get(".form-control").eq(6).click({force:true}).type(rate);
+        cy.get(".form-control").eq(10).click({force:true}).type(quantity);
+        cy.get(".form-control").eq(11).click({force:true}).type(rate);
         cy.get('#root > div > div.body.width-85 > div > div > div > div > form > div > div.MuiBox-root.css-17rbpkv > div > div:nth-child(2) > div:nth-child(7) > button').click({force:true});
     }
     cy.wait(1000);

@@ -70,7 +70,8 @@
     });
     cy.visit("https://mgm.ibos.io/commonapproval");
     cy.wait(1000);
-    cy.get('.rowItem').eq(24).click({force:true});
+    cy.get('.rowItem').eq(27).click({force:true}); 
+    // $$('.rowItem')
     cy.wait(2000);
     
     for (let i = 1; i <= 1; i++){
