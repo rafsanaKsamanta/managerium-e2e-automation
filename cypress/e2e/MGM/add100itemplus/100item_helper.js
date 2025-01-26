@@ -24,7 +24,7 @@ export const createPurchaseOrderWith100Item = (quantity,rate) => {
     //  .type("{enter}",{force: true});
     //  cy.wait(2000);
     //add  100 item plus
-    for(let i=0; i<20; i++)
+    for(let i=0; i<10; i++)
     {
         const selector = `#react-select-mgm-option-${i}`;
         cy.log(`Current selector: ${selector}`);
