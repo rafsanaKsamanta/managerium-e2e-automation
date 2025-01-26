@@ -71,7 +71,7 @@
     });
     cy.visit("https://mgm.ibos.io/commonapproval");
     cy.wait(1000);
-    cy.get('.rowItem').eq(10).click({force:true});
+    cy.get('.rowItem').eq(12).click({force:true});
     cy.wait(2000);
     cy.get('.MuiButtonBase-root').eq(2).click({force:true});
     cy.wait(2000);
