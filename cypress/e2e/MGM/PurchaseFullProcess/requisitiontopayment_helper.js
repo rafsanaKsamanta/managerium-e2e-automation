@@ -96,7 +96,7 @@ export const purchaserequisition = (remarks,req_quantity,rate) => {
         cy.wait(2000);
       };
 
-      //};
+      
 
 
     
