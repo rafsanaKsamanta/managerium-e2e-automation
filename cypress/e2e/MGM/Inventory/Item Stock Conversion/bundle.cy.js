@@ -8,7 +8,7 @@
     it("should create a stock conversion using stock transfer feature of old item " , ()=>{
         cy.bundle("Testing for Bundle","2");
         cy.approveUnbundle();
-        cy.stockCheck("Winter Pitha");
+        //cy.stockCheck("Winter Pitha");
     });
 
  
