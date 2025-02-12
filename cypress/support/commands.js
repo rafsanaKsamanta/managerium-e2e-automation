@@ -382,6 +382,11 @@ import{stockCheck}from"../e2e/MGM/Inventory/Item Stock Conversion/unbundle_helpe
   });
   //approve purchase requisition
   import{approverequisition}from"../e2e/MGM/PurchaseFullProcess/requisitiontopayment_helper.js";
-  Cypress.Commands.add("approverequisiion",()=>{
+  Cypress.Commands.add("approverequisition",()=>{
     approverequisition();
+  });
+  //create purchase quotation from requisition
+  import{purchasequotation}from"../e2e/MGM/PurchaseFullProcess/requisitiontopayment_helper.js";
+  Cypress.Commands.add("purchasequotation",()=>{
+    purchasequotation();
   });

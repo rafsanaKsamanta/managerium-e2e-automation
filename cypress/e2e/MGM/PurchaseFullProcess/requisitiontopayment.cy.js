@@ -5,6 +5,8 @@ describe("Purchase Requisition ",()=>{
         cy.login("01679172828","123456");
         cy.purchaserequisition("Automated Testing by Samanta","10","1");
         cy.approverequisition();
+        cy.purchasequotation();
+
         // cy.receivePurchaseOrder();
         // view
         // cy.viewReceivePurchaseOrder();
