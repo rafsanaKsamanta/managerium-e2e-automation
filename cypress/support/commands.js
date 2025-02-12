@@ -390,3 +390,8 @@ import{stockCheck}from"../e2e/MGM/Inventory/Item Stock Conversion/unbundle_helpe
   Cypress.Commands.add("purchasequotation",()=>{
     purchasequotation();
   });
+  //approveRFQ
+  import{approveRFQ}from"../e2e/MGM/PurchaseFullProcess/requisitiontopayment_helper.js";
+  Cypress.Commands.add("approveRFQ",()=>{
+    approveRFQ();
+  });
