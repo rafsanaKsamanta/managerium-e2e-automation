@@ -25,7 +25,7 @@
 // Cypress.Commands.overwrite('visit', (originalFn, url, options) => { ... })
 import {viewAccountingJournal,ApproveFullReturn,viewReturndetails,approveSalesOrder,returndeliverSalesOrder,deliverSalesOrder,
   approveSalesQuotation,orderFromQuotation,editsalesQuotation,createSalesQuotationLine,
-  createSalesQuotationGross,createPurchaseReceive,purchaserequisition,createBankAccount,login} from "../e2e/MGM/Sales/helper";
+  createSalesQuotationGross,createPurchaseReceive,createBankAccount,login} from "../e2e/MGM/Sales/helper";
 
 Cypress.Commands.add("login", (userId, password) => {
   login(userId, password);
@@ -376,7 +376,12 @@ import{stockCheck}from"../e2e/MGM/Inventory/Item Stock Conversion/unbundle_helpe
   });
 
   //purchase Requisition
-  import{purchaserequisition}from"../e2e/MGM/requisitiontopayment_helper.js";
+  import{purchaserequisition}from"../e2e/MGM/PurchaseFullProcess/requisitiontopayment_helper.js";
   Cypress.Commands.add("purchaserequisition",(remarks,req_quantity,rate)=>{
     purchaserequisition(remarks,req_quantity,rate);
+  });
+  //approve purchase requisition
+  import{approverequisition}from"../e2e/MGM/PurchaseFullProcess/requisitiontopayment_helper.js";
+  Cypress.Commands.add("approverequisiion",()=>{
+    approverequisition();
   });

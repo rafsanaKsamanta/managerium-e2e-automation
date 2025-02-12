@@ -1,4 +1,3 @@
- 
  // Stock transfer with new item
  export const stockTransferNewItem = (remarks,trnsQty,item_name) => {
     const resizeObserverLoopErrRe = /^[^(ResizeObserver loop limit exceeded)]/;
