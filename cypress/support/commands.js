@@ -376,7 +376,7 @@ import{stockCheck}from"../e2e/MGM/Inventory/Item Stock Conversion/unbundle_helpe
   });
 
   //purchase Requisition
-  import{purchaserequisition}from"../e2e/MGM/PurchaseFullProcess/requisitiontopayment_helper.js";
+  import{purchaserequisition}from"../e2e/MGM/requisitiontopayment_helper.js";
   Cypress.Commands.add("purchaserequisition",(remarks,req_quantity,rate)=>{
     purchaserequisition(remarks,req_quantity,rate);
   });
