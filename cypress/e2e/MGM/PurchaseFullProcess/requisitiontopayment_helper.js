@@ -175,3 +175,106 @@ export const purchaserequisition = (remarks,req_quantity,rate) => {
 
 
 };
+ // QE Create 01 
+
+ export const createQuotationEntry1 = (rate) => {
+  const resizeObserverLoopErrRe = /^[^(ResizeObserver loop limit exceeded)]/;
+  Cypress.on("uncaught:exception", (err) => {
+    /* returning false here prevents Cypress from failing the test */
+    if (resizeObserverLoopErrRe.test(err.message)) {
+      return false;
+    }
+  });
+  cy.visit("https://mgm.ibos.io/purchase/quotationEntry");
+  cy.wait(1000);
+
+   // click on create button
+   cy.get('.MuiButtonBase-root').eq(2).click({force:true});
+   cy.wait(1000);
+
+   // select office 
+   cy.get("#rfqType > div")
+   .click({ force: true })
+   .get("#react-select-mgm-option-0")
+   .type("{enter}",{force: true});
+   cy.wait(1000);
+
+   //select rfq code
+   cy.get("#rfq > div")
+   .click({ force: true })
+   .get("#react-select-mgm-option-0")
+   .type("{enter}",{force: true});
+   cy.wait(1000);
+
+   // select Supplier
+   cy.get("#supplier > div")
+   .click({ force: true })
+   .get("#react-select-mgm-option-4")
+   .type("{enter}",{force: true});
+   cy.wait(1000);
+
+  
+   //input rate 
+
+   cy.get(".form-control").eq(3).click({force:true}).type(rate);
+   cy.get(".form-control").eq(4).click({force:true}).type(rate);
+   cy.get(".form-control").eq(5).click({force:true}).type(rate);
+   cy.get(".form-control").eq(6).click({force:true}).type(rate);
+   cy.get(".form-control").eq(7).click({force:true}).type(rate);
+
+  //click on save button 
+  cy.get('.btn').eq(3).click({force:true});
+  cy.wait(1000);   
+
+    };
+// QE Create 02 
+
+export const createQuotationEntry2 = (rate) => {
+  const resizeObserverLoopErrRe = /^[^(ResizeObserver loop limit exceeded)]/;
+  Cypress.on("uncaught:exception", (err) => {
+    /* returning false here prevents Cypress from failing the test */
+    if (resizeObserverLoopErrRe.test(err.message)) {
+      return false;
+    }
+  });
+  cy.visit("https://mgm.ibos.io/purchase/quotationEntry");
+  cy.wait(1000);
+
+   // click on create button
+   cy.get('.MuiButtonBase-root').eq(2).click({force:true});
+   cy.wait(1000);
+
+   // select office 
+   cy.get("#rfqType > div")
+   .click({ force: true })
+   .get("#react-select-mgm-option-0")
+   .type("{enter}",{force: true});
+   cy.wait(1000);
+
+   //select rfq code
+   cy.get("#rfq > div")
+   .click({ force: true })
+   .get("#react-select-mgm-option-0")
+   .type("{enter}",{force: true});
+   cy.wait(1000);
+
+   // select Supplier
+   cy.get("#supplier > div")
+   .click({ force: true })
+   .get("#react-select-mgm-option-6")
+   .type("{enter}",{force: true});
+   cy.wait(1000);
+
+  
+   //input rate 
+
+   cy.get(".form-control").eq(4).click({force:true}).type(rate);
+   cy.get(".form-control").eq(5).click({force:true}).type(rate);
+   cy.get(".form-control").eq(6).click({force:true}).type(rate);
+   cy.get(".form-control").eq(7).click({force:true}).type(rate);
+
+  //click on save button 
+  cy.get('.btn').eq(3).click({force:true});
+  cy.wait(1000);   
+
+    };
