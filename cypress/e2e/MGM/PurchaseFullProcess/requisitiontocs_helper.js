@@ -268,6 +268,7 @@ export const createQuotationEntry2 = (rate) => {
   
    //input rate 
 
+   cy.get(".form-control").eq(3).click({force:true}).type(rate);
    cy.get(".form-control").eq(4).click({force:true}).type(rate);
    cy.get(".form-control").eq(5).click({force:true}).type(rate);
    cy.get(".form-control").eq(6).click({force:true}).type(rate);
@@ -278,3 +279,29 @@ export const createQuotationEntry2 = (rate) => {
   cy.wait(1000);   
 
     };
+
+  //approve quotation entry
+  export const approveQE = () => {
+    const resizeObserverLoopErrRe = /^[^(ResizeObserver loop limit exceeded)]/;
+    Cypress.on("uncaught:exception", (err) => {
+      /* returning false here prevents Cypress from failing the test */
+      if (resizeObserverLoopErrRe.test(err.message)) {
+        return false;
+      }
+    });
+    cy.visit("https://mgm.ibos.io/commonapproval");
+    cy.wait(1000);
+    cy.get('.rowItem').eq(5).click({force:true}); 
+    // $$('.rowItem')
+    cy.wait(2000);
+    //eye icon click
+    cy.get('.MuiSvgIcon-root').eq(37).click({force:true});
+    //approve button click
+    cy.get('.MuiSvgIcon-root').eq(3).click({force:true});
+    //yes button click
+    cy.get('.MuiButtonBase-root').eq(3).click({force:true});
+
+
+
+};
+

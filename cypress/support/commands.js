@@ -376,32 +376,37 @@ import{stockCheck}from"../e2e/MGM/Inventory/Item Stock Conversion/unbundle_helpe
   });
 
   //purchase Requisition
-  import{purchaserequisition}from"../e2e/MGM/PurchaseFullProcess/requisitiontopayment_helper.js";
+  import{purchaserequisition}from"../e2e/MGM/PurchaseFullProcess/requisitiontocs_helper.js";
   Cypress.Commands.add("purchaserequisition",(remarks,req_quantity,rate)=>{
     purchaserequisition(remarks,req_quantity,rate);
   });
   //approve purchase requisition
-  import{approverequisition}from"../e2e/MGM/PurchaseFullProcess/requisitiontopayment_helper.js";
+  import{approverequisition}from"../e2e/MGM/PurchaseFullProcess/requisitiontocs_helper.js";
   Cypress.Commands.add("approverequisition",()=>{
     approverequisition();
   });
   //create purchase quotation from requisition
-  import{purchasequotation}from"../e2e/MGM/PurchaseFullProcess/requisitiontopayment_helper.js";
+  import{purchasequotation}from"../e2e/MGM/PurchaseFullProcess/requisitiontocs_helper.js";
   Cypress.Commands.add("purchasequotation",()=>{
     purchasequotation();
   });
   //approveRFQ
-  import{approveRFQ}from"../e2e/MGM/PurchaseFullProcess/requisitiontopayment_helper.js";
+  import{approveRFQ}from"../e2e/MGM/PurchaseFullProcess/requisitiontocs_helper.js";
   Cypress.Commands.add("approveRFQ",()=>{
     approveRFQ();
   });
 
    //createQuotationEntry
-   import{createQuotationEntry1}from"../e2e/MGM/PurchaseFullProcess/requisitiontopayment_helper.js";
+   import{createQuotationEntry1}from"../e2e/MGM/PurchaseFullProcess/requisitiontocs_helper.js";
    Cypress.Commands.add("createQuotationEntry1",(rate)=>{
     createQuotationEntry1(rate);
    });
-   import{createQuotationEntry2}from"../e2e/MGM/PurchaseFullProcess/requisitiontopayment_helper.js";
+   import{createQuotationEntry2}from"../e2e/MGM/PurchaseFullProcess/requisitiontocs_helper.js";
    Cypress.Commands.add("createQuotationEntry2",(rate)=>{
     createQuotationEntry2(rate);
    });
+   //approveQE
+  import{approveQE}from"../e2e/MGM/PurchaseFullProcess/requisitiontocs_helper.js";
+  Cypress.Commands.add("approveQE",()=>{
+    approveQE();
+  });
