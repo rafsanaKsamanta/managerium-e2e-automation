@@ -15,7 +15,8 @@ export const purchaserequisition = (remarks,req_quantity,rate) => {
     cy.wait(1000);
 
     // select employee
-    cy.get("#user > div")
+    cy.get('#user > div', { timeout: 10000 }).should('be.visible')
+    //cy.get("#user > div")
     .click({ force: true })
     .get("#react-select-mgm-option-0")
     .type("{enter}",{force: true});
@@ -116,11 +117,12 @@ export const purchaserequisition = (remarks,req_quantity,rate) => {
 
    // click on create button
    cy.get('.MuiButtonBase-root').eq(2).click({force:true});
-   cy.wait(1000);
+   cy.wait(2000);
 
   // click create from requisition
+  //cy.get('#isRequisition', { timeout: 10000 }).should('be.visible').eq(0).check({ force: true });
   cy.get('#isRequisition').eq(0).check({ force: true });
-  cy.wait(500);
+  cy.wait(1000);
 
 
   //select requisition code
@@ -197,10 +199,10 @@ export const purchaserequisition = (remarks,req_quantity,rate) => {
    .click({ force: true })
    .get("#react-select-mgm-option-0")
    .type("{enter}",{force: true});
-   cy.wait(1000);
+   cy.wait(2000);
 
    //select rfq code
-   cy.get("#rfq > div")
+   cy.get('#rfq > div', { timeout: 10000 }).should('be.visible')
    .click({ force: true })
    .get("#react-select-mgm-option-0")
    .type("{enter}",{force: true});
@@ -294,14 +296,23 @@ export const createQuotationEntry2 = (rate) => {
     cy.get('.rowItem').eq(5).click({force:true}); 
     // $$('.rowItem')
     cy.wait(2000);
+    // qe 1 approve
     //eye icon click
     cy.get('.MuiSvgIcon-root').eq(37).click({force:true});
     //approve button click
-    cy.get('.MuiSvgIcon-root').eq(3).click({force:true});
+    cy.get('.btn').eq(3).click({force:true});
     //yes button click
     cy.get('.MuiButtonBase-root').eq(3).click({force:true});
 
-
+    //qe 2 approve
+    //eye icon click
+    cy.get('.MuiSvgIcon-root').eq(36).click({force:true});
+    //approve button click
+    cy.get('.btn').eq(3).click({force:true});
+    //yes button click
+    cy.get('.MuiButtonBase-root').eq(3).click({force:true});
 
 };
+
+
 

@@ -9,6 +9,7 @@ describe("Purchase Requisition ",()=>{
         cy.approveRFQ();
         cy.createQuotationEntry1("1");
         cy.createQuotationEntry2("2");
+        cy.approveQE();
 
         
 
