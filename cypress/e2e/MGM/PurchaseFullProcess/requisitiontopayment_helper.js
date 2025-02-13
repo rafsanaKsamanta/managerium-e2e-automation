@@ -142,9 +142,36 @@ export const purchaserequisition = (remarks,req_quantity,rate) => {
    cy.wait(1000);
 
   //click on save button 
-  cy.get('.btn').eq(3).click({force:true});
+  cy.get('.btn').eq(2).click({force:true});
   cy.wait(1000);   
 
     };
 
-    //
+    //approve request of quotation
+    export const approveRFQ = () => {
+      const resizeObserverLoopErrRe = /^[^(ResizeObserver loop limit exceeded)]/;
+      Cypress.on("uncaught:exception", (err) => {
+        /* returning false here prevents Cypress from failing the test */
+        if (resizeObserverLoopErrRe.test(err.message)) {
+          return false;
+        }
+      });
+      cy.visit("https://mgm.ibos.io/commonapproval");
+      cy.wait(1000);
+      cy.get('.rowItem').eq(2).click({force:true}); 
+      // $$('.rowItem')
+      cy.wait(2000);
+      
+      cy.get('[type="checkbox"]').eq(1).check({ force: true });
+      
+      //cy.get('[type="checkbox"]').eq(1).check({ force: true });
+      // cy.get('#root > div > div.body.width-85 > div > div > div > div > div.container-fluid > div.purchase_order_table.section_table > div.MuiPaper-root.MuiPaper-elevation.MuiPaper-rounded.MuiPaper-elevation1.MuiTableContainer-root.tableContainer.css-13xy2my > table > tbody > tr:nth-child(1) > td:nth-child(7) > span > button > svg').click({ force: true });
+      // cy.wait(2000);
+  
+      cy.get('.btn').eq(3).click({force:true});
+      cy.wait(2000);
+      cy.get('.MuiButtonBase-root').eq(5).click({force:true});
+      cy.wait(2000); 
+
+
+};

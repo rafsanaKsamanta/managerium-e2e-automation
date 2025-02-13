@@ -6,11 +6,10 @@ describe("Purchase Requisition ",()=>{
         cy.purchaserequisition("Automated Testing by Samanta","10","1");
         cy.approverequisition();
         cy.purchasequotation();
+        cy.approveRFQ();
+        
 
-        // cy.receivePurchaseOrder();
-        // view
-        // cy.viewReceivePurchaseOrder();
-        // cy.DirectSupplierPaymentByCash();
+
     });
 
    
