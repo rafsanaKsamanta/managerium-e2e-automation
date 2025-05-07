@@ -8,7 +8,7 @@
       }
     });
     cy.viewport(1920, 1080);
-    cy.visit("https://mgm.ibos.io/");
+    cy.visit("https://devmgm.ibos.io/");
         cy.get("#loginMobileNo").eq(0).click({force:true}).type(userId);
         cy.get("#loginPassword").eq(0).click({force:true}).type(password);
         cy.get("form").submit();

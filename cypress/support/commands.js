@@ -411,4 +411,11 @@ import{stockCheck}from"../e2e/MGM/Inventory/Item Stock Conversion/unbundle_helpe
     approveQE();
   });
 
+
+  //comparative statment
+  import{ComparativeStatement}from"../e2e/MGM/PurchaseFullProcess/requisitiontocs_helper.js";
+  Cypress.Commands.add("ComparativeStatement",()=>{
+    ComparativeStatement();
+  });
+
   

@@ -7,13 +7,16 @@ export const purchaserequisition = (remarks,req_quantity,rate) => {
         return false;
       }
     });
-    cy.visit("https://mgm.ibos.io/purchase/purchaseRequisition");
+    cy.visit("https://devmgm.ibos.io/purchase/purchaseRequisition");
     cy.wait(1000);
 
     // click on create button
     cy.get('.btn').eq(2).click({force:true});
     cy.wait(1000);
 
+    //select employee radio button
+    cy.get('.MuiButtonBase-root').eq(1).click({force:true});
+    cy.wait(1000);
     // select employee
     cy.get('#user > div', { timeout: 10000 }).should('be.visible')
     //cy.get("#user > div")
@@ -69,7 +72,7 @@ export const purchaserequisition = (remarks,req_quantity,rate) => {
         cy.get('.btn').eq(3).click({force:true});
         cy.wait(1000);
         //click on yes button
-        cy.get('.MuiButtonBase-root').eq(5).click({force:true});
+        cy.get('.MuiButtonBase-root').eq(6).click({force:true});
         cy.wait(1000);
         
          };
@@ -82,7 +85,7 @@ export const purchaserequisition = (remarks,req_quantity,rate) => {
             return false;
           }
         });
-        cy.visit("https://mgm.ibos.io/commonapproval");
+        cy.visit("https://devmgm.ibos.io/commonapproval");
         cy.wait(1000);
         cy.get('.rowItem').eq(4).click({force:true}); 
         // $$('.rowItem')
@@ -112,7 +115,7 @@ export const purchaserequisition = (remarks,req_quantity,rate) => {
       return false;
     }
   });
-  cy.visit("https://mgm.ibos.io/purchase/rfq");
+  cy.visit("https://devmgm.ibos.io/purchase/rfq");
   cy.wait(1000);
 
    // click on create button
@@ -158,7 +161,7 @@ export const purchaserequisition = (remarks,req_quantity,rate) => {
           return false;
         }
       });
-      cy.visit("https://mgm.ibos.io/commonapproval");
+      cy.visit("https://devmgm.ibos.io/commonapproval");
       cy.wait(1000);
       cy.get('.rowItem').eq(2).click({force:true}); 
       // $$('.rowItem')
@@ -187,7 +190,7 @@ export const purchaserequisition = (remarks,req_quantity,rate) => {
       return false;
     }
   });
-  cy.visit("https://mgm.ibos.io/purchase/quotationEntry");
+  cy.visit("https://devmgm.ibos.io/purchase/quotationEntry");
   cy.wait(1000);
 
    // click on create button
@@ -239,7 +242,7 @@ export const createQuotationEntry2 = (rate) => {
       return false;
     }
   });
-  cy.visit("https://mgm.ibos.io/purchase/quotationEntry");
+  cy.visit("https://devmgm.ibos.io/purchase/quotationEntry");
   cy.wait(1000);
 
    // click on create button
@@ -291,28 +294,65 @@ export const createQuotationEntry2 = (rate) => {
         return false;
       }
     });
-    cy.visit("https://mgm.ibos.io/commonapproval");
+    cy.visit("https://devmgm.ibos.io/commonapproval");
     cy.wait(1000);
     cy.get('.rowItem').eq(5).click({force:true}); 
     // $$('.rowItem')
     cy.wait(2000);
     // qe 1 approve
     //eye icon click
-    cy.get('.MuiSvgIcon-root').eq(37).click({force:true});
+    cy.get('.MuiSvgIcon-root').eq(41).click({force:true});
     //approve button click
     cy.get('.btn').eq(3).click({force:true});
     //yes button click
     cy.get('.MuiButtonBase-root').eq(3).click({force:true});
 
     //qe 2 approve
+    cy.visit("https://devmgm.ibos.io/commonapproval");
+    cy.wait(1000);
+    cy.get('.rowItem').eq(5).click({force:true}); 
+    // $$('.rowItem')
+    cy.wait(2000);
+
     //eye icon click
-    cy.get('.MuiSvgIcon-root').eq(36).click({force:true});
+    cy.get('.MuiSvgIcon-root').eq(41).click({force:true});
     //approve button click
     cy.get('.btn').eq(3).click({force:true});
     //yes button click
     cy.get('.MuiButtonBase-root').eq(3).click({force:true});
 
 };
+
+//CS save and view
+export const ComparativeStatement = () => {
+  const resizeObserverLoopErrRe = /^[^(ResizeObserver loop limit exceeded)]/;
+  Cypress.on("uncaught:exception", (err) => {
+    /* returning false here prevents Cypress from failing the test */
+    if (resizeObserverLoopErrRe.test(err.message)) {
+      return false;
+    }
+  });
+  cy.visit("https://devmgm.ibos.io/purchase/cs");
+  cy.wait(1000);
+  //view CS
+  cy.get('.MuiSvgIcon-root').eq(40).click({force:true}); 
+  cy.wait(2000);
+  //select supplier
+  //cy.get('.PrivateSwitchBase-input').eq(3).click({force:true});
+  //select checkbox
+  //cy.get('.MuiTableCell-root').eq(12).click({force:true});
+  //cy.wait(1000);
+  //cy.get('.MuiTableCell-root').eq(21).click({force:true});
+ // cy.get('.MuiTableCell-root').eq(30).click({force:true});
+ // cy.get('.MuiTableCell-root').eq(39).click({force:true});
+
+  //yes save button
+  //cy.get('.btn').eq(2).click({force:true});
+
+  
+
+};
+
 
 
 

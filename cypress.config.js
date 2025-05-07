@@ -1,24 +1,27 @@
 const { defineConfig } = require("cypress");
-const cucumber = require("cypress-cucumber-preprocessor").default;
-
 
 module.exports = defineConfig({
-  // Your existing Cypress configuration options
-
   reporter: "cypress-mochawesome-reporter",
-
-  plugins: {
-    e2e: {
-      setupNodeEvents(on, config) {
-        require("cypress-mochawesome-reporter/plugin")(on);
-      },
-    },
+  reporterOptions: {
+    reportDir: "cypress/reports/mochawesome",
+    overwrite: false,
+    html: false,
+    json: true
   },
+  e2e: {
+    setupNodeEvents(on, config) {
+      require("cypress-mochawesome-reporter/plugin")(on);
+    },
+    baseUrl: "https://devmgm.ibos.io/", // optional
+    specPattern: "cypress/e2e/**/*.cy.js",
+  },
+
+
 
   // Other Cypress configuration options, if any
-  preprocessors: {
-    ...cucumber.preprocessors, // Add this line to configure the Cucumber preprocessor
-  },
+  // preprocessors: {
+  //   ...cucumber.preprocessors, // Add this line to configure the Cucumber preprocessor
+  // },
 
   e2e: {
     setupNodeEvents(on, config) {
