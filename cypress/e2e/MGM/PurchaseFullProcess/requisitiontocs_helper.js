@@ -324,7 +324,7 @@ export const createQuotationEntry2 = (rate) => {
 };
 
 //CS save and view
-export const ComparativeStatement = () => {
+export const ComparativeStatement = (remarks) => {
   const resizeObserverLoopErrRe = /^[^(ResizeObserver loop limit exceeded)]/;
   Cypress.on("uncaught:exception", (err) => {
     /* returning false here prevents Cypress from failing the test */
@@ -335,19 +335,22 @@ export const ComparativeStatement = () => {
   cy.visit("https://devmgm.ibos.io/purchase/cs");
   cy.wait(1000);
   //view CS
-  cy.get('.MuiSvgIcon-root').eq(40).click({force:true}); 
+  cy.get('.MuiSvgIcon-root').eq(41).click({force:true}); 
   cy.wait(2000);
   //select supplier
-  //cy.get('.PrivateSwitchBase-input').eq(3).click({force:true});
+  cy.get('.PrivateSwitchBase-input').eq(3).click({force:true});
   //select checkbox
-  //cy.get('.MuiTableCell-root').eq(12).click({force:true});
-  //cy.wait(1000);
-  //cy.get('.MuiTableCell-root').eq(21).click({force:true});
- // cy.get('.MuiTableCell-root').eq(30).click({force:true});
- // cy.get('.MuiTableCell-root').eq(39).click({force:true});
+  //cy.get('input[type="checkbox"]').check(['option1', 'option2']);
+
+ //cy.get('.MuiTableCell-root').eq(3).click({force:true});
+ cy.get('[name="isAllCheck"]').click({ force: true });
+//   cy.wait(1000);
+//   cy.get('.MuiTableCell-root').eq(21).click({force:true});
+//  cy.get('.MuiTableCell-root').eq(30).click({force:true});
+//  cy.get('.MuiTableCell-root').eq(39).click({force:true});
 
   //yes save button
-  //cy.get('.btn').eq(2).click({force:true});
+  cy.get('.btn-primary').eq(0).click({force:true});
 
   
 

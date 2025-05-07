@@ -414,8 +414,8 @@ import{stockCheck}from"../e2e/MGM/Inventory/Item Stock Conversion/unbundle_helpe
 
   //comparative statment
   import{ComparativeStatement}from"../e2e/MGM/PurchaseFullProcess/requisitiontocs_helper.js";
-  Cypress.Commands.add("ComparativeStatement",()=>{
-    ComparativeStatement();
+  Cypress.Commands.add("ComparativeStatement",(remarks)=>{
+    ComparativeStatement(remarks);
   });
 
   
